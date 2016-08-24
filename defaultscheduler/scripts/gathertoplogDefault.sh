@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+file_serverinfo=/Users/anshushukla/PycharmProjects/FullTopoSC/log1/script/PrivateIPs.txt
+
+#file_outputcommands=usefulcommands.txt
+
+#file_pem=/home/ubuntu/anshu.pem
+
+expNum=21413003301511180
+#expNum=$1
+
+
+for i in `cat $file_serverinfo`
+do
+
+
+
+path_dest="/Users/anshushukla/PycharmProjects/FullTopoSC/defaultscheduler/cpu/$expNum/$i"
+#path_src=
+
+mkdir -p "$path_dest"
+	printf " sshpass -p dream@119 scp -r  -o \"ProxyCommand corkscrew proxy.iisc.ernet.in 3128  $i  22\"  anshu@$i:/home/anshu/toplogFinalSC/toplogFloatPI/cpuRstorm-$expNum*  $path_dest/$i-logFileWorkerTOP.txt "
+
+
+/usr/local/bin/sshpass -p dream@119  scp -o "ProxyCommand /usr/local/bin/corkscrew proxy.iisc.ernet.in 3128  $i 22"  anshu@$i:/home/anshu/toplogFinalSC/toplogBlockWindowLog/*-$expNum*  $path_dest
+#sshpass -p dream@119  scp -o "ProxyCommand corkscrew proxy.iisc.ernet.in 3128  $i 22"  anshu@$i:/home/anshu/toplogFinalSC/toplogFloatPI/cpuRstorm-$expNum*  $path_dest/$i-logFileWorkerTOP.txt
+
+done
+echo DONE
+
+#echo "url1=http://`sed -n '1p' $file_serverinfo`:8080/cloud9-project0-web/echoweb" >> $file_outputcommands
+#echo "url2=http://`sed -n '2p' $file_serverinfo`:8080/cloud9-project0-rest/echo" >> $file_outputcommands
+
+
+
+
+
+
+
+
+
+#/usr/local/bin/sshpass -p dream@119  scp -o "ProxyCommand /usr/local/bin/corkscrew proxy.iisc.ernet.in 3128  $i 22"  anshu@$i:/home/anshu/toplogFinalSC/toplogBlockWindowLog/*-$expNum*  $path_dest
+

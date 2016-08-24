@@ -1,0 +1,2 @@
+Id,Uptime,Host,Port,Debug,Emitted,Transferred,Capacity (last 10m),Execute latency (ms),Executed,Process latency (ms),Acked,Failed
+[2-2],5m 20s,10.3.0.22,6709,files,60440,60440,0.002,0.012,60420,0,0,0

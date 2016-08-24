@@ -1,0 +1,6 @@
+//rate-80
+ builder.setBolt("identityparse",new Identity_SAXparser(sinkLogFileName),1.0).shuffleGrouping("spout").setMemoryLoad(408.774193549).setCPULoad(21.935483871);
+ builder.setBolt("identitytable",new IdentityTable(sinkLogFileName),27.0).shuffleGrouping("spout").setMemoryLoad(497.777777777).setCPULoad(2.96296296296);
+ builder.setBolt("identitypi",new IdentityPI(sinkLogFileName),4.0).shuffleGrouping("identityblob").shuffleGrouping("identitytable").shuffleGrouping("identityparse").shuffleGrouping("batchFileWriteTaskBolt").setMemoryLoad(405.942857143).setCPULoad(70.4761904762);
+ builder.setBolt("batchFileWriteTaskBolt",new BatchFileWriteTaskBolt(p_),1.0).shuffleGrouping("spout").setMemoryLoad(1.1232).setCPULoad(0.0788);
+ builder.setBolt("identityblob",new AzureBlobDownloadTaskBolt(p_),40.0).shuffleGrouping("spout").setMemoryLoad(1217.16).setCPULoad(8.6);

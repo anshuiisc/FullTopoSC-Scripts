@@ -1,0 +1,5 @@
+xmlparse,threads,1,cpu,74.0322580645,mem,38.3225806452
+table,threads,410,cpu,640.0,mem,624.0
+floatpi,threads,19,cpu,979.285714286,mem,912.685714286
+batchedWrite,threads,1,cpu,0.26595,mem,0.1053
+blob,threads,450,cpu,900.0,mem,900.0

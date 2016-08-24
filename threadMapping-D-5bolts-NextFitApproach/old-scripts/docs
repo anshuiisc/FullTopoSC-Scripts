@@ -1,0 +1,7 @@
+To get xepected CPUa dn Mem from Mapping files copied from STORM ui -
+
+
+1- paste csv files for mapping of every bolt within folder name
+2- getVM-WorkerMapping.py  to get  boltThreadCount-<dir-name>  mapping in out dir. of that folder
+3- getExpectedCPUandMem.py  for finding expected cpu and MEM
+4- CPUStackedBarplot.py  stacked bar-plot for plotting  expected cpu
